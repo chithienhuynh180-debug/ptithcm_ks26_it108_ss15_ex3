@@ -1,0 +1,21 @@
+Hybrid Workflow
+code chạy trên SSD local cho nhanh, app đồng bộ tự đẩy bản sao lên cloud cho an toàn.
+
+Bẫy node_modules
+không sync node_modules, chỉ sync source code, package.json và package-lock.json. node_modules để ngoài vùng sync hoặc thêm vào .gitignore. cần thì chạy npm install là có lại.
+
+Files On-Demand
+Docs và Assets để online-only, chỉ tải khi mở. Code đang làm để Always keep on this device.
+
+Luồng I/O
+1. Ctrl+S, file ghi xuống SSD local.
+2. app đồng bộ phát hiện file đổi.
+3. upload lên cloud.
+4. cloud lưu và tạo version mới.
+5. cloud báo xong, file hiện tích xanh.
+
+Thư mục Cloud
+Startup/
+  Code/ (src, package.json, package-lock.json)
+  Docs/ (SRS, báo cáo)
+  Assets/ (ảnh, logo, font)
